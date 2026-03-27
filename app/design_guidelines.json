@@ -1,0 +1,124 @@
+{
+  "theme": "dark",
+  "archetype": "Archetype 4 (Swiss & High-Contrast)",
+  "color_palette": {
+    "background_primary": "#0A0A0A",
+    "background_secondary": "#121212",
+    "background_tertiary": "#1A1A1A",
+    "text_primary": "#FFFFFF",
+    "text_secondary": "#A1A1AA",
+    "accent_primary": "#0055FF",
+    "accent_positive": "#22C55E",
+    "accent_negative": "#EF4444",
+    "accent_warning": "#F59E0B",
+    "border_subtle": "rgba(255,255,255,0.12)",
+    "border_focus": "#0055FF"
+  },
+  "typography": {
+    "font_families": {
+      "heading": "Chivo, sans-serif",
+      "body": "'IBM Plex Sans', sans-serif",
+      "mono": "'JetBrains Mono', monospace"
+    },
+    "font_weights": {
+      "heading": "700",
+      "body": "400",
+      "mono": "500"
+    },
+    "scale": {
+      "h1": "text-4xl tracking-tight",
+      "h2": "text-2xl tracking-tight",
+      "h3": "text-xl",
+      "h4": "text-lg",
+      "body": "text-sm",
+      "small": "text-xs",
+      "mono_data": "text-xs tracking-wider"
+    },
+    "rules": [
+      "Headings strictly use Chivo. Never use Inter or generic sans for headings.",
+      "All financial data, tickers, and percentages MUST use JetBrains Mono.",
+      "Small overlines or section headers should be uppercase, text-xs, with tracking-[0.2em]."
+    ]
+  },
+  "layout_and_spacing": {
+    "grid_strategy": "Control Room Grid",
+    "spacing_scale": "Dense (p-2 to p-6 max)",
+    "container_padding": "p-4",
+    "gap": "gap-4",
+    "rules": [
+      "Use grid borders (border-collapse style) to separate sections rather than floating cards.",
+      "Maximized screen usage; no decorative white space; every pixel is for data.",
+      "Optical alignment: align numeric data to the right, text to the left.",
+      "Use 100vh layout for the main application shell. Avoid page scrolling; use side panels, scrollable columns, and tabs for data density.",
+      "Mobile-first applies but this is an enterprise desktop-heavy application. Optimize for large screens (lg:grid-cols-4 or more)."
+    ]
+  },
+  "components": {
+    "surface_strategy": "Grid Borders (The 'Technical' Look). Expose the skeleton.",
+    "border_radius": "rounded-none or rounded-sm (max 2px)",
+    "cards": {
+      "style": "Flat background, 1px subtle border, no shadow",
+      "padding": "p-4"
+    },
+    "buttons": {
+      "style": "Solid sharp edges, monochromatic unless it's a primary action. Primary uses accent_primary.",
+      "hover": "Slight brightness increase, no translation (keep it rigid)."
+    },
+    "navigation": {
+      "style": "Dense side navigation panel or top bar with solid background.",
+      "active_state": "Left or bottom border highlight with accent color."
+    },
+    "charts": {
+      "library": "Recharts",
+      "style": "Minimalist axes, color based on data trend (positive/negative), thin stroke widths (1px or 2px), zero decorative backgrounds."
+    },
+    "data_tables": {
+      "style": "Dense, text-sm or text-xs, border-b on rows, subtle highlight row on hover, fixed header. Right-align numbers."
+    }
+  },
+  "motion_and_interaction": {
+    "philosophy": "Instantaneous and precise. Tools for experts don't waste time on animations.",
+    "hover_states": "Immediate color or background change, no transition delays.",
+    "transitions": "None or extremely fast (duration-75)."
+  },
+  "accessibility": {
+    "contrast": "Ensure APCA > 60 for normal text. > 45 for large text. High contrast is a priority.",
+    "focus_rings": "2px solid #0055FF.",
+    "testing": "All interactive elements MUST have data-testid attributes."
+  },
+  "media_and_assets": {
+    "icons": {
+      "library": "Phosphor Icons",
+      "style": "Thin or regular weight, sharp edges."
+    },
+    "images": {
+      "hero_background": {
+        "url": "https://images.unsplash.com/photo-1612370432785-aeda121d730c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwxfHxibGFjayUyMGFuZCUyMHdoaXRlJTIwbW9kZXJuJTIwYXJjaGl0ZWN0dXJlJTIwZGV0YWlsfGVufDB8fHx8MTc3NDYzNTQ4M3ww&ixlib=rb-4.1.0&q=85",
+        "description": "Grayscale architectural abstract for login or blank states"
+      },
+      "user_avatar": {
+        "url": "https://images.pexels.com/photos/262391/pexels-photo-262391.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Serious executive portrait for profile"
+      },
+      "data_placeholder": {
+        "url": "https://images.unsplash.com/photo-1772056380786-ac57a47d349d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzN8MHwxfHNlYXJjaHwyfHxtaW5pbWFsaXN0JTIwZGF0YSUyMHZpc3VhbGl6YXRpb24lMjBncmFwaCUyMGRhcmt8ZW58MHx8fHwxNzc0NjM1NDgyfDA&ixlib=rb-4.1.0&q=85",
+        "description": "Abstract radial pattern for complex AI data states"
+      }
+    }
+  },
+  "instructions_to_main_agent": [
+    "Build a full-viewport, dense dashboard matching a modernized 'Bloomberg Terminal' aesthetic.",
+    "Install the required font families: Chivo, IBM Plex Sans, and JetBrains Mono.",
+    "Install icon library: yarn add @phosphor-icons/react",
+    "Install chart library: yarn add recharts",
+    "Use 'Control Room Grid' layouts: dense, gap-4, covering the whole screen. No scrolling in the main layout wrapper (h-screen).",
+    "Rely heavily on 'JetBrains Mono' for tickers, market data, and portfolio metrics.",
+    "Do NOT use 'Inter' for headings. Use 'Chivo'.",
+    "Use pure HTML/Tailwind for structural layout with 'Grid Borders' (border-r, border-b on sections, thin rgba(255,255,255,0.12) lines).",
+    "Avoid the Shadcn Card component if it adds too much padding; use custom div containers with tight padding and sharp corners.",
+    "Implement real-time feeling components: sparklines, dense data tables, and high-contrast metric summaries.",
+    "For the market analysis & portfolio risk assessment sections, use Recharts with monochromatic themes, highlighting anomalies in Signal Red or Positive Green.",
+    "Never use full-screen gradients. Keep colors muted except for crucial data indicators (red/green).",
+    "Ensure the layout can accommodate AI-Powered Market Analysis, Portfolio Optimization, Financial Document Analysis, and Real-time Dashboard functionalities in a highly dense, tabbed or grid-based view."
+  ]
+}
